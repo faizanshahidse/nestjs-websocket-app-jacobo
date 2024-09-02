@@ -1,1 +1,3 @@
-# nestjs-websocket-app-jacobo
+# nestjs-webocket-app-jocobo
+
+## Packages
