@@ -6,6 +6,7 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Observable } from 'rxjs';
+import { RequestWithAuth } from 'src/common/types';
 
 @Injectable()
 export class ControllerAuthGuard implements CanActivate {
@@ -15,7 +16,7 @@ export class ControllerAuthGuard implements CanActivate {
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const ctx = context.switchToHttp();
-    const request = ctx.getRequest();
+    const request: RequestWithAuth = ctx.getRequest();
 
     const { accessToken } = request.body;
 
